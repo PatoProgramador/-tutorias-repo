@@ -9,7 +9,7 @@ class Tutores:
         print("5) Salir de las operaciones de tutores")
 
     def get_all_stmt(self):
-        select_stmt = "SELECT * FROM awdawd"
+        select_stmt = "SELECT * FROM tutores"
         
         return select_stmt
 
@@ -20,3 +20,16 @@ class Tutores:
         )
         
         return insert_stmt
+    
+    def update_tutor_stmt(self):
+        update_stmt = (
+            "UPDATE tutores SET NOMBRES_TUTORES=%s, APELLIDOS_TUTORES=%s,PAIS_TUTOR=%s  WHERE ID_TUTORES=%s"
+        )
+        
+        return update_stmt
+
+    def delete_tutor_stmt(self):
+        delete_stmt = "DELETE FROM tutores WHERE ID_TUTORES = %s"
+        
+        return delete_stmt
+    
