@@ -9,13 +9,13 @@ class Estudiantes:
         print("5) Salir de las operaciones de estudiantes")
 
     def get_all_stmt(self):
-        select_stmt = "SELECT * FROM (ESTUDIANTES)"
+        select_stmt = "SELECT * FROM ESTUDIANTES"
         
         return select_stmt
 
     def create_estudiantes_stmt(self):
         insert_stmt = (
-            "INSERT INTO (ESTUDIANTES) (ID_ESTUDIANTE, NOMBRE_ESTUDIANTE, APELLIDOS_ESTUDIANTE)"
+            "INSERT INTO ESTUDIANTES (ID_ESTUDIANTE, NOMBRE_ESTUDIANTE, APELLIDOS_ESTUDIANTE)"
             "VALUES (%s, %s, %s)"
         )
         
@@ -28,7 +28,7 @@ class Estudiantes:
         
         return update_stmt
     
-    def update_estudiantes_stmt(self):
+    def delete_estudiantes_stmt(self):
         delete_stmt = "DELETE FROM ESTUDIANTES WHERE ID_ESTUDIANTE = %s"
         
         return delete_stmt

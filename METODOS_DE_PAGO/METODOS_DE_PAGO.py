@@ -9,13 +9,13 @@ class Metodos_pago:
         print("5) Salir de las operaciones de metodos de pago")
 
     def get_all_stmt(self):
-        select_stmt = "SELECT * FROM (metodos_de_pago)"
+        select_stmt = "SELECT * FROM metodos_de_pago"
         
         return select_stmt
 
     def create_pagos_stmt(self):
         insert_stmt = (
-            "INSERT INTO (metodos_de_pago) (ID_METODOS_DE_PAGO, NOMBRE_METODO_DE_PAGO, TIPO_METODO_DE_PAGO)"
+            "INSERT INTO metodos_de_pago (ID_METODOS_DE_PAGO, NOMBRE_METODO_DE_PAGO, TIPO_METODO_DE_PAGO)"
             "VALUES (%s, %s, %s)"
         )
         
