@@ -35,16 +35,5 @@ class Conector:
         cursor = self.cursor.cursor()
         
         cursor.execute(stmt, data)
-        
-        last_insert_id = cursor.lastrowid
-        print(f"Instancia creada con ID: {last_insert_id}")
-        
+               
         self.cursor.commit()
-        
-        
-# # Conection
-# mydb = mysql.connector.connect(
-#     host ="localhost", user="root", password="", database="tutorias"
-# )
-# # Ejecuciones en la db
-# mycursor = mydb.cursor()
