@@ -9,7 +9,7 @@ class Catalogos:
     
     def get_all_areas_conocimiento(self):
         insert_stmt = (
-            "SELECT * areas_conocimiento"
+            "SELECT * FROM areas_conocimiento"
         )
         
         return insert_stmt
