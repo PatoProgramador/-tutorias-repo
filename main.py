@@ -61,6 +61,25 @@ def main():
                     print('---------------------------------------------------------')
                     print('|        Area de conocimiento creada correctamente       |')
                     print('---------------------------------------------------------')
+                # 7) TUTORIAS
+                if ad_Op == 3:
+                    print('---------------------------------------------------------')
+                    id_estudiante = input('Ingrese el numero de documento del aprendiz: ')
+                    id_tutor = input('Digite el numero de documento del tutor: ')
+                    id_area_conocimiento = input('Ingrese el Id del area de conocimiento: ')
+                    fecha_tutoria = input('Ingrese la fecha la cual fue efectuada la tutoria(en formato YYYY-MM-DD): ')
+                    tiempo_tutoria = int(input('Ingrese el tiempo que duro la tutoria: '))
+                    calificacion_tutor = int(input('Ingrese la calificacion del tutor: '))
+                    calificacion_estudiante = int(input('Ingrese la calificacion del estudiante: '))
+                    valor_tutoria = input('Ingrese el valor que tuvo la tutoria: ')
+                    
+                    data = (id_estudiante, id_tutor, id_area_conocimiento, fecha_tutoria, tiempo_tutoria, calificacion_tutor, calificacion_estudiante, valor_tutoria)
+                    create_tutoria_stmt = adminUser.create_tutoria()
+                    
+                    sqlConn.create_instance(create_tutoria_stmt, data)
+                    print('---------------------------------------------------------')
+                    print('|               tutoria creada correctamente             |')
+                    print('---------------------------------------------------------')
                 if ad_Op == 0:
                     aux = False
         # Tutor (operaciones)
@@ -72,6 +91,7 @@ def main():
                 tutorOp = int(input('Escriba la operacion que desea realizar: '))
                 # 3) TUTORES (crear en tabla)
                 if tutorOp == 1:
+                    print('---------------------------------------------------------')
                     id_tutor = input('Digite su numero de documento: ')
                     nombres_tutor = input('Digite sus nombres: ')
                     apellidos_tutor = input('Digite sus apellidos: ')
@@ -94,6 +114,7 @@ def main():
                     print('---------------------------------------------------------')
                 # 4) TUTORES_AREAS_CONOCIMIENTO
                 if tutorOp == 2:
+                    print('---------------------------------------------------------')
                     id_tutor = input('Ingrese su numero de documento: ')
                     # mostrar areas de conocimiento
                     print('----Lista de areas de conocimiento disponibles----')
@@ -122,6 +143,7 @@ def main():
                 estOp = int(input('Escriba la operacion que desea realizar: '))
                 # 5) APRENDICES
                 if estOp == 1:
+                    print('---------------------------------------------------------')
                     id_estudiante = input('Ingrese su numero de documento: ')
                     nombres_estudiante = input('Ingrese sus nombres: ')
                     apellidos_estudiante = input('Ingrese sus apellidos: ')
@@ -144,6 +166,7 @@ def main():
                     print('---------------------------------------------------------')
                 # 6) AGENDA_TUTORES_APRENDICES
                 if estOp == 2:
+                    print('---------------------------------------------------------')
                     id_estudiante = input('Ingrese su numero de documento: ')
                     print('----Lista de areas de conocimiento disponibles----')
                     areas_get_stmt = instance_Catalog.get_all_areas_conocimiento()
@@ -171,5 +194,6 @@ def main():
                     print('---------------------------------------------------------')
                 if estOp == 0:
                     aux = False
-               
+        if opt == 0:
+            contin = False
 main()
