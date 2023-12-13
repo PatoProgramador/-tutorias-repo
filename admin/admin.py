@@ -4,6 +4,7 @@ class Admin:
         print("Lista de operaciones disponibles: ")
         print("1. Crear pais")
         print("2. Crear area de conocimiento")
+        print("0. Regresar al menu principal")
 
     def create_pais_stmt(self):
         insert_stmt = (
