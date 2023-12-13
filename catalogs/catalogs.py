@@ -13,3 +13,10 @@ class Catalogos:
         )
         
         return insert_stmt
+    
+    def get_all_tutores_areas(self):
+        insert_stmt = (
+            "SELECT ID_TUTOR, TARIFA FROM tutores_areas_conocimiento WHERE ID_AREA_CONOCIMIENTO = %s"
+        )
+        
+        return insert_stmt

@@ -12,11 +12,20 @@ class Conector:
         except mysql.connector.Error as e:
             # Manejo de excepciones específicas de MySQL
             print(f"Error de MySQL: {e}")
-
+            
     def get_all(self, stmt:str):
         cursor = self.cursor.cursor()
         
         cursor.execute(stmt)
+        
+        resultados = cursor.fetchall()
+        
+        return resultados
+
+    def get_all_sorted(self, stmt:str, data):
+        cursor = self.cursor.cursor()
+        
+        cursor.execute(stmt, data)
         
         resultados = cursor.fetchall()
         
